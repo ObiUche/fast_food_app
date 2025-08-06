@@ -33,7 +33,7 @@ export interface CartItemType {
     id: string; // menu item id
     name: string;
     price: number;
-    image_url: string;
+    imageUrl: string;
     quantity: number;
     customizations?: CartCustomization[];
 }

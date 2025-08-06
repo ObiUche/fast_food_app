@@ -3,7 +3,8 @@ import React from 'react'
 import {useState} from "react";
 import {useLocalSearchParams, router} from "expo-router";
 import {images} from "@/constants";
-import {useDebounce, useDebouncedCallback} from "use-debounce";
+import {string} from "postcss-selector-parser";
+
 
 
 const SearchBar = () => {

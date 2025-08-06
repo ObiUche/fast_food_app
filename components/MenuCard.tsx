@@ -3,10 +3,12 @@ import React from 'react'
 import {MenuItem} from "@/type";
 import {Platform} from "react-native";
 import {appwriteConfig} from "@/lib/appwrite";
+import {useCartStore} from "@/store/cart.store";
 
-const MenuCard = ({item : {image_url , name , price }} : {item: MenuItem}) => {
+const MenuCard = ({item : {$id, image_url , name , price }} : {item: MenuItem}) => {
 
     const imageUrl = image_url;
+    const {addItem } = useCartStore();
 
 
 
@@ -15,8 +17,8 @@ const MenuCard = ({item : {image_url , name , price }} : {item: MenuItem}) => {
             <Image source = {{uri : imageUrl}} className="size-32 absolute -top-10" resizeMode={"contain"}/>
             <Text className={"text-center base-bold text-dark-100 mb-2"}
             numberOfLines={1}>{name}</Text>
-            <Text className={"body-regulat text-gray-200 mb-4"}>From ${price}</Text>
-           <TouchableOpacity onPress={() => {}}>
+            <Text className={"body-regulat text-gray-200 mb-4"}>From £{price}</Text>
+           <TouchableOpacity onPress={() =>addItem({id:$id, name, price, imageUrl }) }>
                <Text className={"paragraph-bold text-primary"}>Add to Cart</Text>
 
            </TouchableOpacity>

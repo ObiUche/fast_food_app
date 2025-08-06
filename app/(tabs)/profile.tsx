@@ -6,7 +6,7 @@ import seed from "@/lib/seed"
 const Profile = () => {
     return (
         <SafeAreaView>
-            <Button title="Seed" onPress={() => seed().catch((error) => console.log("Failed to seed database", error))} />
+         <Text>Name </Text>
         </SafeAreaView>
     )
 }
