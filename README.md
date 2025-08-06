@@ -1,50 +1,124 @@
-# Welcome to your Expo app 👋
+# Food Ordering Mobile App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native food ordering application with authentication, menu browsing, cart functionality, and user profiles. Built with Expo, Appwrite backend, and Zustand for state management.
+Features
 
-## Get started
+    User Authentication: Sign up, sign in, and session management
 
-1. Install dependencies
+    Menu Browsing: View food items by category or search
 
-   ```bash
-   npm install
-   ```
+    Shopping Cart: Add/remove items, adjust quantities
 
-2. Start the app
+    Responsive UI: Tailwind CSS for styling with custom components
 
-   ```bash
-   npx expo start
-   ```
+    State Management: Zustand stores for auth and cart state
 
-In the output, you'll find options to open the app in a
+    Backend Integration: Appwrite for database and authentication
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Tech Stack
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+    Frontend: React Native, Expo Router
 
-## Get a fresh project
+    Styling: Tailwind CSS with NativeWind
 
-When you're ready, run:
+    State Management: Zustand
 
-```bash
-npm run reset-project
-```
+    Backend: Appwrite (Database, Authentication)
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+    Error Tracking: Sentry
 
-## Learn more
+    Type Safety: TypeScript
 
-To learn more about developing your project with Expo, look at the following resources:
+Components
+Core Components
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+    CustomButton: Reusable button with loading states
 
-## Join the community
+    CustomInput: Form input with labels and validation
 
-Join our community of developers creating universal apps.
+    CustomHeader: Navigation header with back button
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+    MenuCard: Displays menu items with add-to-cart functionality
+
+    CartItem: Individual cart item with quantity controls
+
+    SearchBar: Search functionality
+
+    Filter: Category filtering
+
+State Management
+
+    auth.store: Handles user authentication state
+
+    cart.store: Manages shopping cart state and calculations
+
+Screens
+
+    Authentication: SignIn, SignUp
+
+    Main App:
+
+        Home (Featured offers)
+
+        Search (Browse menu with filters)
+
+        Cart (Checkout functionality)
+
+        Profile (User details)
+
+Setup
+
+    Install dependencies:
+
+bash
+
+npm install
+# or
+yarn install
+
+    Configure environment variables:
+
+bash
+
+cp .env.example .env
+# Fill in your Appwrite credentials
+
+    Run the app:
+
+bash
+
+expo start
+
+Project Structure
+text
+
+/src
+├── components/       # Reusable components
+├── constants/       # App constants and images
+├── lib/             # Utility functions and Appwrite API
+├── store/           # Zustand state stores
+├── types/           # TypeScript type definitions
+└── app/             # App screens and navigation
+
+Backend Requirements
+
+This app requires an Appwrite backend with:
+
+    Database configured with collections for:
+
+        Users
+
+        Menu items
+
+        Categories
+
+    Storage bucket for images
+
+    Authentication enabled
+
+Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+License
+
+MIT
